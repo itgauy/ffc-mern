@@ -1,0 +1,15 @@
+{
+  "name": "ffc-mern",
+  "version": "^1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "freecodecamp",
+    "mern"
+  ],
+  "author": "itgauy",
+  "license": "MIT",
+  "description": "A practice of MERN Stack at FreeCodeCamp"
+}
