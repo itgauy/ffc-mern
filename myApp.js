@@ -1,3 +1,4 @@
+require('dotenv').config();
 let express = require('express');
 let app = express();
 
@@ -8,7 +9,11 @@ app.get("/", function (req, res) { // Redirection or route
 });
 
 app.get("/json", function (req, res) {
-  res.json({ "message": "Hello json" });
+  if (process.env.MESSAGE_STYLE === "uppercase") {
+    res.json({ "message": "Hello json".toUpperCase() });
+  } else {
+    res.json({ "message": "Hello json" });
+  }
 });
 
 app.use("/", express.static(__dirname + '/public')); // To access the styles.css for index.html
