@@ -29,9 +29,13 @@ app.use("/public", express.static(__dirname + '/public'))
 app.get("/now", (req, res, next) => {
   req.time = new Date().toString()
   next()
-},
-  (req, res) => {
-    res.send({ time: req.time })
-  })
+}, (req, res) => {
+  res.send({ time: req.time })
+})
+
+// Get Route Parameter Input from the Client
+app.get("/:word/echo", (req, res) => {
+  res.send({ echo: req.params.word })
+})
 
 module.exports = app;
