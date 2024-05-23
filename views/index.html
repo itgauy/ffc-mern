@@ -10,11 +10,13 @@
 
 <body>
   <h1>Hello, HTML!</h1>
-
-  <label for="fname">First Name:</label>
-  <input type="text" name="fname" value="Lian"><br>
-  <label for="lname">Last Name:</label>
-  <input type="text" name="lname" value="Torres">
+  <form action="/name" method="post">
+    <label>First Name:</label>
+    <input type="text" name="first" value="Lian"><br>
+    <label>Last Name:</label>
+    <input type="text" name="last" value="Torres"><br><br>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 
 </html>
