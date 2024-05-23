@@ -14,6 +14,7 @@
   "license": "MIT",
   "description": "A practice of MERN Stack at FreeCodeCamp",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
   }

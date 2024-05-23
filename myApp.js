@@ -1,5 +1,6 @@
 require('dotenv').config()
 let express = require('express')
+let bodyParser = require("body-parser")
 let app = express()
 
 // Logger Middleware
@@ -24,6 +25,9 @@ app.get("/json", (req, res) => {
 // To access the styles.css for index.html
 app.use("/", express.static(__dirname + '/public'))
 app.use("/public", express.static(__dirname + '/public'))
+
+// To use body-parser to Parse POST Requests
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Checks the current time
 app.get("/now", (req, res, next) => {
