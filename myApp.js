@@ -1,9 +1,20 @@
 require('dotenv').config()
-let express = require('express')
-let mongoose = require('mongoose')
-mongoose.connect(process.env.MONGO_URI)
-let bodyParser = require("body-parser")
-let app = express()
+const express = require('express')
+const mongoose = require('mongoose') // Require Mongoose
+mongoose.connect(process.env.MONGO_URI) // Connect MongoDB
+const bodyParser = require("body-parser")
+const app = express()
+
+const Schema = mongoose.Schema
+
+const personSchema = new Schema({
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods: [String]
+})
+
+const Person = mongoose.model('Person', personSchema)
+
 
 // Logger Middleware
 app.use((req, res, next) => {
