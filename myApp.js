@@ -5,6 +5,7 @@ mongoose.connect(process.env.MONGO_URI) // Connect MongoDB
 const bodyParser = require("body-parser")
 const app = express()
 
+// Create a Model
 const Schema = mongoose.Schema
 
 const personSchema = new Schema({
@@ -12,7 +13,6 @@ const personSchema = new Schema({
   age: Number,
   favoriteFoods: [String]
 })
-
 const Person = mongoose.model('Person', personSchema)
 
 
